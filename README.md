@@ -12,8 +12,9 @@ please, refer to comments for explanation of the logic
 	not S
 
 **for example:** 'James says at least one of George and Brian is a knave' can be translated to 'James says George is a knave or Brian is a knave'.
+
 * plug in the translated statement as an argument to function solve/1
-* make sure to hit ';' instead of '.' to see all possible solutions to the puzzle
+* make sure to hit **;** instead of **.** to see all possible solutions to the puzzle
 
 # disclaimer
 the code has been **heavily** inspired by the course material provided at the course [Semantic and Declarative Technologies](http://cs.bme.hu/~szeredi/ait/) at [AIT](https://www.ait-budapest.com/) by [Peter Szeredi](http://cs.bme.hu/~szeredi/).
