@@ -2,7 +2,7 @@
 please, refer to comments for explanation of the logic
 
 ## usage
-* plug in the code to a prolog interpreter ([SWISH]()).
+* plug in the code to a prolog interpreter ([SWISH](http://swish.swi-prolog.org/)).
 * 'translate' your puzzle to the format that contains Statements of the acceptable formats:
 
 	X is a Y, 	*where X and Y can be {Varaible, knight, knave}*<br/>
