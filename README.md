@@ -5,8 +5,8 @@ please, refer to comments for explanation of the logic
 * plug in the code to a prolog interpreter ([SWISH]()).
 * 'translate' your puzzle to the format that contains Statements of the acceptable formats:
 
-	X is a Y	where X and Y can be {Varaible, knight, knave}<br/>
-	X says S	where X can be {Variable, knight, knave} and S is a statement<br/>
+	X is a Y, 	*where X and Y can be {Varaible, knight, knave}*<br/>
+	X says S, 	*where X can be {Variable, knight, knave} and S is a statement*<br/>
 	S1 or S2	<br/>
 	S1 and S2	<br/>
 	not S		<br/>
