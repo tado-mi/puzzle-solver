@@ -16,4 +16,4 @@ please, refer to comments for explanation of the logic
 * make sure to hit ';' instead of '.' to see all possible solutions to the puzzle
 
 # disclaimer
-the code has been **heavily** inspired by the course material provided at the course** [Semantic and Declarative Technologies](http://cs.bme.hu/~szeredi/ait/)** at [AIT](https://www.ait-budapest.com/) by [Peter Szeredi](http://cs.bme.hu/~szeredi/).
+the code has been **heavily** inspired by the course material provided at the course [Semantic and Declarative Technologies](http://cs.bme.hu/~szeredi/ait/) at [AIT](https://www.ait-budapest.com/) by [Peter Szeredi](http://cs.bme.hu/~szeredi/).
