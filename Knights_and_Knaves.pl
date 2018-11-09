@@ -44,16 +44,16 @@ truthful(knave,  0). % Knaves  always tell false statements
 % if both B1 and B2 are one, B1 * B2 is 1, while B1 + B2 is 2, so the equation gives 1
 
 % evaluation
-evaluate(Statement, V) :-
+evaluate(Statement, Boolenan) :-
 
 	Statement = (X is a Y) ->
 		truthful(X, XBoolean), truthful(Y, YBoolean),
-		% Statement is true if X and Y are the same
+%		Statement is true if X and Y are the same
 		Boolean is 1 - abs(XBoolean - YBoolean);
 
 	Statement = (X says S) ->
 		truthful(X, XBoolean), evaluate(S, SBoolean),
-		% Statement is true if X and S are the same
+%		Statement is true if X and S are the same
 		Boolean is 1 - abs(XBoolean - SBoolean) 
 	;
 
