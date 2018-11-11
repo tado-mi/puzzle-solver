@@ -35,46 +35,46 @@ feed the translation to **solve/1** predicate.
 
 ## sample run:
 
-| ?- solve(James is a knight).
-James = knight ? ;
-no
-
-| ?- solve(James says George says George is a knave).
-James = knave,
-George = knight ? ;
-James = knave,
-George = knave ? ;
-no
-
-| ?- J = (James is a knight), solve(not J).
-J = (knave is a knight),
-James = knave ? ;
-no
-
-| ?- solve(James says James is a knight or George is a knave and Chris is a knave).
-James = knight,
-George = knight,
-Chris = knight ? ;
-James = knight,
-George = knight,
-Chris = knave ? ;
-James = knight,
-George = knave,
-Chris = knight ? ;
-James = knight,
-George = knave,
-Chris = knave ? ;
-James = knave,
-George = knight,
-Chris = knight ? ;
-James = knave,
-George = knight,
-Chris = knave ? ;
-James = knave,
-George = knave,
-Chris = knight ? ;
-no
-
+| ?- solve(James is a knight).<br/>
+James = knight ? ;<br/>
+no<br/>
+<br/>
+| ?- solve(James says George says George is a knave).<br/>
+James = knave,<br/>
+George = knight ? ;<br/>
+James = knave,<br/>
+George = knave ? ;<br/>
+no<br/>
+<br/>
+| ?- J = (James is a knight), solve(not J).<br/>
+J = (knave is a knight),<br/>
+James = knave ? ;<br/>
+no<br/>
+<br/>
+| ?- solve(James says James is a knight or George is a knave and Chris is a knave).<br/>
+James = knight,<br/>
+George = knight,<br/>
+Chris = knight ? ;<br/>
+James = knight,<br/>
+George = knight,<br/>
+Chris = knave ? ;<br/>
+James = knight,<br/>
+George = knave,<br/>
+Chris = knight ? ;<br/>
+James = knight,<br/>
+George = knave,<br/>
+Chris = knave ? ;<br/>
+James = knave,<br/>
+George = knight,<br/>
+Chris = knight ? ;<br/>
+James = knave,<br/>
+George = knight,<br/>
+Chris = knave ? ;<br/>
+James = knave,<br/>
+George = knave,<br/>
+Chris = knight ? ;<br/>
+no<br/>
+<br/>
 # 24_Game.pl
 
 **wikipedia:** The 24 Game is an arithmetical [card game](https://en.wikipedia.org/wiki/Card_game) in which the objective is to find a way to manipulate four integers so that the end result is 24. <br/>
