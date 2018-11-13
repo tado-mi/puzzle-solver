@@ -29,15 +29,19 @@ calc(O1, O2, O, R) :-
 % the main function
 % solve(+List of numbers, ?Result, -Solution)
 % base case
-solve([X, Y], R, Solution) :-
+solve_h([X, Y], R, Solution) :-
 	calc(X, Y, Operation, R), Solution = [X, Operation, Y].
 % recursive case
-solve(L, R, Solution) :-
-	permutation(L, P),
-	P = [X | T],
+solve_h(L, R, Solution) :-
+	L = [X | T],
 	% TR is all the possible values we van obtain from the Tail of the List
 	% TS is how we will obtain its corresponding TR
 	solve(T, TR, TS),
 	% if we can obtain R with the given List, it is possible with the operator O
 	solve([X, TR], R, [X, O, TR]),
 	Solution = [X, O|TS].
+
+solve(L, R, Solution) :-
+	permutation(L, P),		% moving permutation 'down' does not create extra choice points
+	solve_h(P, R1, Solution),
+	R1 =:= R.			% 24.0 =:= 24 returns true, elevating the nessecity from the user to insert floating point number
