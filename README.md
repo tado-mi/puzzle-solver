@@ -1,6 +1,6 @@
 Included are Prolog files for solving various mathematical puzzles. Files are commented out, explaining the logic and the purpose of defined predicates. <br/>
 
-It has been written whith the use of course materials provided at [Semantic and Declarative Technologies](http://cs.bme.hu/~szeredi/ait/) course at [AIT](https://www.ait-budapest.com/) by [Peter Szeredi](http://cs.bme.hu/~szeredi/). <br/>
+It has been written with the use of course materials provided at [Semantic and Declarative Technologies](http://cs.bme.hu/~szeredi/ait/) course at [AIT](https://www.ait-budapest.com/) by [Peter Szeredi](http://cs.bme.hu/~szeredi/). <br/>
 
 
 To compile and use, plug in the code to a prolog interpreter. [SWISH](http://swish.swi-prolog.org/) is a free option.
@@ -12,7 +12,7 @@ To compile and use, plug in the code to a prolog interpreter. [SWISH](http://swi
 
 ## the idea:
 
-'translate' the puzzle such that it contains of the forms supported, which are:
+'translate' the puzzle such that it is a Statement of a supported form:
 
 * Character is a (knight / knave)
 * Character says Statement
@@ -74,11 +74,31 @@ James = knave,<br/>
 George = knave,<br/>
 Chris = knight ? ;<br/>
 no<br/>
-<br/>
+
 # 24_Game.pl
 
 **wikipedia:** The 24 Game is an arithmetical [card game](https://en.wikipedia.org/wiki/Card_game) in which the objective is to find a way to manipulate four integers so that the end result is 24. <br/>
 **full page:** [link](https://en.wikipedia.org/wiki/24_Game)
+
+## the idea:
+
+use the predicate **solve/3**, whith the arguments *list*, *result*, *?solution*. Introduction of *result* makes it more generic than just 24.<br/>
+
+* try all the possible permutations and operator assignments to the given list of numbers.
+* compute the value and compare to the result
+
+## the code:
+
+Iteratively assign values/operators to last (n - 1) items of the number list and 'glews' the first number with all the possible operator assignment.<br/>
+
+**note** that such approach considers expressions of form that correspond to the following tree:<br/>
+
+	/\
+	 /\
+	  /\
+	   ...
+
+That can be serious limitation. For example, if the result can be satisfied by x<sub>1</sub> * x<sub>2</sub> + x<sub>3</sub> * x<sub>4</sub> assignment only, the code will fail.
 
 # Sudoku.pl
 *yeap, yet another one of those!*
