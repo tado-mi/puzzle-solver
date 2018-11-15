@@ -98,7 +98,7 @@ Iteratively assign values/operators to last (n - 1) items of the number list and
 	  /\
 	   ...
 
-That can be serious limitation. For example, if the result can be satisfied by x<sub>1</sub> * x<sub>2</sub> + x<sub>3</sub> * x<sub>4</sub> assignment only, the code will fail.
+That can be serious limitation. For example, if the result can be satisfied by x<sub>1</sub>x<sub>2</sub> + x<sub>3</sub>x<sub>4</sub> assignment only, the code will fail.
 
 # Sudoku.pl
 *yeap, yet another one of those!*
