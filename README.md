@@ -79,3 +79,6 @@ no<br/>
 
 **wikipedia:** The 24 Game is an arithmetical [card game](https://en.wikipedia.org/wiki/Card_game) in which the objective is to find a way to manipulate four integers so that the end result is 24. <br/>
 **full page:** [link](https://en.wikipedia.org/wiki/24_Game)
+
+# Sudoku.pl
+*yeap, yet another one of those!*
