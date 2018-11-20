@@ -33,47 +33,13 @@ feed the translation to **solve/1** predicate.
 
 **solve/1** predicate will call **evaluate/2** predicate. Since the Statement contains variables, prolog will try to make assignments to those variables such that the second argument to evaluate (1: true) will be satisfied.
 
-## sample run:
+## valid sample queries:
 
-| ?- solve(James is a knight).<br/>
-James = knight ? ;<br/>
-no<br/>
-<br/>
-| ?- solve(James says George says George is a knave).<br/>
-James = knave,<br/>
-George = knight ? ;<br/>
-James = knave,<br/>
-George = knave ? ;<br/>
-no<br/>
-<br/>
-| ?- J = (James is a knight), solve(not J).<br/>
-J = (knave is a knight),<br/>
-James = knave ? ;<br/>
-no<br/>
-<br/>
-| ?- solve(James says James is a knight or George is a knave and Chris is a knave).<br/>
-James = knight,<br/>
-George = knight,<br/>
-Chris = knight ? ;<br/>
-James = knight,<br/>
-George = knight,<br/>
-Chris = knave ? ;<br/>
-James = knight,<br/>
-George = knave,<br/>
-Chris = knight ? ;<br/>
-James = knight,<br/>
-George = knave,<br/>
-Chris = knave ? ;<br/>
-James = knave,<br/>
-George = knight,<br/>
-Chris = knight ? ;<br/>
-James = knave,<br/>
-George = knight,<br/>
-Chris = knave ? ;<br/>
-James = knave,<br/>
-George = knave,<br/>
-Chris = knight ? ;<br/>
-no<br/>
+	| ?- solve(James is a knight).
+	| ?- solve(George says George is a knave)
+	| ?- solve(James says George says George is a knave).
+	| ?- J = (James is a knight), solve(not J).
+	| ?- solve(James says James is a knight or George is a knave and Chris is a knave).
 
 # 24_Game.pl
 
@@ -101,4 +67,20 @@ Iteratively assign values/operators to last (n - 1) items of the number list and
 That can be serious limitation. For example, if the result can be satisfied by x<sub>1</sub>x<sub>2</sub> + x<sub>3</sub>x<sub>4</sub> assignment only, the code will fail.
 
 # Sudoku.pl
-*yeap, yet another one of those!*
+
+**wikipedia:** Sudoku (数独 sūdoku, digit-single) is a [logic](https://en.wikipedia.org/wiki/Logic)-based, [combinatorial](https://en.wikipedia.org/wiki/Combinatorics) number-placement [puzzle](https://en.wikipedia.org/wiki/Puzzle). The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution. 
+**full page:** [link](https://en.wikipedia.org/wiki/Sudoku)
+
+Indeed, yet another one of those! Perks unique (as far as my personal research into the web went) to this particular implementation:
+
+* no use of the **clpfd** library
+* no hard-coded predicates for breaking an nxn Grid into blocks
+
+## the idea:
+
+* verify if the given Grid is solvable with respect to the currently inserted values
+* brute force all possible value assignments to 'empty' cells of the offered Grid
+* verify if the new Grid is consistent with Sudoku rules
+
+## the code:
+
