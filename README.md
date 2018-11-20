@@ -68,7 +68,7 @@ That can be serious limitation. For example, if the result can be satisfied by x
 
 # Sudoku.pl
 
-**wikipedia:** Sudoku (数独 sūdoku, digit-single) is a [logic](https://en.wikipedia.org/wiki/Logic)-based, [combinatorial](https://en.wikipedia.org/wiki/Combinatorics) number-placement [puzzle](https://en.wikipedia.org/wiki/Puzzle). The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution. 
+**wikipedia:** Sudoku (数独 sūdoku, digit-single) is a [logic](https://en.wikipedia.org/wiki/Logic)-based, [combinatorial](https://en.wikipedia.org/wiki/Combinatorics) number-placement [puzzle](https://en.wikipedia.org/wiki/Puzzle). The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution. <br/>
 **full page:** [link](https://en.wikipedia.org/wiki/Sudoku)
 
 Indeed, yet another one of those! Perks unique (as far as my personal research into the web went) to this particular implementation:
