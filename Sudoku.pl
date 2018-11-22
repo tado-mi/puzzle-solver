@@ -52,7 +52,8 @@ gen([], []).
 splash([], [], []).
 splash([H|T], [R|K], [[H|R]|U]) :-
     splash(T,K,U).
-    
+
+% extract_blocks(+RowList, +Size, -BlockList)
 extract_blocks([], _, []).
 extract_blocks(R, S, B) :-
     transpose(R, RT),
