@@ -48,14 +48,14 @@ feed the translation to **solve/1** predicate.
 
 ## the idea:
 
-use the predicate **solve/3**, whith the arguments *list*, *result*, *?solution*. Introduction of *result* makes it more generic than just 24.<br/>
+use the predicate **solve/3**, with the arguments *list*, *result*, *?solution*. Introduction of *result* makes it more generic than just solving for 24.<br/>
 
 * try all the possible permutations and operator assignments to the given list of numbers.
 * compute the value and compare to the result
 
 ## the code:
 
-Iteratively assign values/operators to last (n - 1) items of the number list and 'glews' the first number with all the possible operator assignment.<br/>
+Iteratively assign values/operators to last (n - 1) items of the number list and 'glew' the first number with all the possible operator assignments.<br/>
 
 **note** that such approach considers expressions of form that correspond to the following tree:<br/>
 
@@ -64,11 +64,15 @@ Iteratively assign values/operators to last (n - 1) items of the number list and
 	  /\
 	   ...
 
-That can be serious limitation. For example, if the result can be satisfied by x<sub>1</sub>x<sub>2</sub> + x<sub>3</sub>x<sub>4</sub> assignment only, the code will fail.
+That can be a serious limitation. For example, if the result can be satisfied by x<sub>1</sub>x<sub>2</sub> + x<sub>3</sub>x<sub>4</sub> assignment only, the code will fail.
+
+## possible improvements
+
+* generalise solution to build trees of all forms
 
 # Sudoku.pl
 
-**wikipedia:** Sudoku (数独 sūdoku, digit-single) is a [logic](https://en.wikipedia.org/wiki/Logic)-based, [combinatorial](https://en.wikipedia.org/wiki/Combinatorics) number-placement [puzzle](https://en.wikipedia.org/wiki/Puzzle). The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution. <br/>
+**wikipedia:** Sudoku (数独 sūdoku, digit-single) is a [logic](https://en.wikipedia.org/wiki/Logic)-based, [combinatorial](https://en.wikipedia.org/wiki/Combinatorics) number-placement [puzzle](https://en.wikipedia.org/wiki/Puzzle). The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution. 
 **full page:** [link](https://en.wikipedia.org/wiki/Sudoku)
 
 Indeed, yet another one of those! Perks unique (as far as my personal research into the web went) to this particular implementation:
@@ -84,3 +88,14 @@ Indeed, yet another one of those! Perks unique (as far as my personal research i
 
 ## the code:
 
+Mindlessly brute-force all the possible value assignments into the provided Grid and verify whether or not it is consistent. <br/>
+
+**blocks/2:** calls *blocks/3* predicate<br/>
+**blocks/3:** takes first k = (block side size) rows of the grid, calls the *extract_blocks/3* predicate to save individual blocks from the first k rows in variable B1, and makes a recursive call for the remaining rows, saving the result in variable B2, finally appending them into the third parameter B.<br/>
+<br/>
+**extract_blocks/3:** transposes the provided rowlist R into variable RT, and saves first k = (block side size) rows in variable B1Temp -> B1, makes a recursive call for the remaining rows, saving the result in variable B2, finally appending B1 and B2 into the the third parameter B.
+
+## possible improvements:
+
+* check whether a Grid modified with brute-forced insertions is consistent with Sudoku rules during the insertion, eliminating some trivially wrong attempts to solution
+* 'figure out' which cells are bound to have a certain value and insert those permanently, narrowing down the space for brute-force trials
