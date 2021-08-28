@@ -48,12 +48,12 @@ evaluate(Statement, Boolenan) :-
 
 	Statement = (X is a Y) ->
 		truthful(X, XBoolean), truthful(Y, YBoolean),
-%		Statement is true if X and Y are the same
+		% Statement is true if X and Y are the same
 		Boolean is 1 - abs(XBoolean - YBoolean);
 
 	Statement = (X says S) ->
 		truthful(X, XBoolean), evaluate(S, SBoolean),
-%		Statement is true if X and S are the same
+		% Statement is true if X and S are the same
 		Boolean is 1 - abs(XBoolean - SBoolean) 
 	;
 
